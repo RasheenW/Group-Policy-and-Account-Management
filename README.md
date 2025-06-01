@@ -37,4 +37,10 @@ In Windows Powershell ISE open a new script, Save it under any name then paste t
 
 <img src= https://i.imgur.com/uy48Sso.png>
 
-This script will generate up to 1000 users which isn't necessary so feel free to let it run up to roughly 50-100. Note the password for every user account will just be "Password1"
+This script will generate up to 10000 users which isn't necessary so feel free to let it run up to roughly 1000. Note the password for every user account will just be "Password1". As long as you have the "_EMPLOYEES" OU the script should run normally, Now click the Green Arrow and let the script run for a period of time
+
+<img src=https://i.imgur.com/tBADt7i.png>
+
+Once you have a handfull of Users created, Pick a random one and relog into Client-1 with the created User
+
+<img src=https://i.imgur.com/VA39t3t.png>
