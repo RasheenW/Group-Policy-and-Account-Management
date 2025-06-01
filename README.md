@@ -44,3 +44,7 @@ This script will generate up to 10000 users which isn't necessary so feel free t
 Once you have a handfull of Users created, Pick a random one and relog into Client-1 with the created User
 
 <img src=https://i.imgur.com/VA39t3t.png>
+
+If you was able to log in as your User, We can proceed onto Managing these Accounts
+
+<h2> Account Management </h2>
