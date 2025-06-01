@@ -36,3 +36,5 @@ Log into DC-1 as your admin user, We will now use a script within Windows Powers
 In Windows Powershell ISE open a new script, Save it under any name then paste the script we copied earlier into the file itself
 
 <img src= https://i.imgur.com/uy48Sso.png>
+
+This script will generate up to 1000 users which isn't necessary so feel free to let it run up to roughly 50-100. Note the password for every user account will just be "Password1"
