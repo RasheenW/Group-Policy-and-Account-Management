@@ -46,4 +46,62 @@ Once you have a handfull of Users created, Pick a random one and relog into Clie
 
 If you was able to log in as your User, We can proceed onto Managing these Accounts
 
-<h2> Account Management </h2>
+<h2> Group Policy </h2>
+
+Before we actually proceed, We need to update the Group Policy to have Account Lockouts because it is not on by default, Log into dc-1 and in the search bar type "Run". Within that enter "gpmc.msc", click Ok and the Group Policy Management Console should appear
+After it does drop down the categories on the left until you see "Default Domain Policy" then right click it to edit as shown in the image below
+
+<img src=https://i.imgur.com/LOu5ZWA.png>
+<img src=https://i.imgur.com/xGTBsQV.png>
+
+Now within the editor we just have to expand in this order, Computer Configuration > Policies > Windows Settings > Security Settings > Account > Polices > Account Lockout Policy
+
+<img src=https://i.imgur.com/gTG4gHy.png>
+
+The policies we will be adjusting is shown below in this manner by right clicking each one and selecting "Properties"
+- Account lockout duration: 30 minutes
+- Account lockout threshold: 5 invalid logon attempts
+- Allow Administrator account lockout: Enabled
+- Reset account lockout counter after: 10 minutes
+
+<img src=https://i.imgur.com/IKM4of2.png>
+
+To finish this step off we will be logging back into Client-1 with jane_admin to force update the policy so we don't have to wait for it to update on its own. Simply we will just open the Command Prompt and type gpupdate /force
+<img src=https://i.imgur.com/81AFXjR.png>
+
+<h2> Unlocking Accounts </h2>
+Within dc-1, Pick a random user and log into client-1 as the user with the wrong password up to 5 times to create a log history and force it into account lock out. We will find this user through Active Directory Users and Computers
+The account I chose was cema.mam, Once you have failed to log in up to 5 times with your selected account (To check if its locked, try using the Password1 and see if it lets you in).
+
+<img src= https://i.imgur.com/9BKlC7U.png>
+
+In dc-1 right click Employees_ in Active Directory Users and Computers and click "Find" to easily locate your user
+
+<img src=https://i.imgur.com/XyPzGqy.png>
+
+Once you do double click on their name, Proceed to click Account, Check the box that says "Unlock Account" and click apply. Proceed to log into your users account again 
+
+<img src=https://i.imgur.com/HzYfd2Z.png>
+
+<h2> Password Resets </h2>
+
+This part is relatively simple, You would find the account the same way as above but instead you right click on the name and click "Reset Password". What's nice about this is that you can also unlock accounts as well at the same time.
+
+<img src=https://i.imgur.com/XtdSKh1.png>
+<img src=https://i.imgur.com/7jX1Em3.png>
+
+<h2> Enabling and Disabling Accounts </h2>
+
+You can also do this from the Find menu, Right click on the user and click "Disable Account". If you click "Find now" immediately after this you'll see their user icon updates to showcase its a disable account
+
+<img src= https://i.imgur.com/0Bcvqrl.png>
+
+Now if you attempt to log into that user account this prompt will show 
+
+<img src=https://i.imgur.com/toCVJ8z.png>
+
+We can easily enable the account again from the same menu
+
+<h2> End </h2>
+
+Congrats on understanding how to use Active Directorym, This will be the end of this demostration
